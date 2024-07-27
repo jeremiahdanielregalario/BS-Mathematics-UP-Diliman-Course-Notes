@@ -8,7 +8,8 @@ ABSTRACT ALGEBRA I: Unit I
 #set text(size: 14pt, )
 #emph[Course Notes by: Jeremiah Daniel Regalario] \
 #emph[II-BS Mathematics] \
-#emph[Lilibeth Valdez]
+#emph[University of the Philippines - Diliman] \
+#emph[Dr. Lilibeth Valdez]
 
 
 #pagebreak()
