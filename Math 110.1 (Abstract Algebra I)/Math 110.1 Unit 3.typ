@@ -80,8 +80,8 @@ Let $R$ be a ring.
 + $angle.l ZZ_n, +_n, dot_n angle.r$ is a commutative ring with unity 1. The set of units of $ZZ_n$ is denoted $U(n)$. Exercise: Determine the elements of $U(4)$ and $U(5)$.
 
   #block(stroke: 1pt, radius: 5pt, inset: 10pt, width: 100%)[
-    - $U(4) = {a in ZZ_4 | exists k in ZZ "s.t." a dot_4k = 1 } = {1, 3}$ 
-    - $U(5) = {a in ZZ_5 | exists k in ZZ "s.t." a dot_5k = 1 } = {1, 2, 3, 4}$
+    - $U(4) = {a in ZZ_4 | exists k in ZZ "s.t." a dot_4k = 1} = {1, 3}$ 
+    - $U(5) = {a in ZZ_5 | exists k in ZZ "s.t." a dot_5k = 1} = {1, 2, 3, 4}$
   ]
 + $angle.l 2ZZ, +, dot angle.r$ is a commutative ring with no unity.
 
