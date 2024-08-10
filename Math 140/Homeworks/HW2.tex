@@ -1,0 +1,107 @@
+\documentclass[a4paper, 10pt]{exam}
+\usepackage[margin=1in]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath, graphicx, multicol}
+\usepackage{pgf,tikz, graphicx}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+
+\everymath{\displaystyle}
+\printanswers
+\newmdtheoremenv{proof}{Proof}
+
+\begin{document}
+\fbox{\textbf{Math 140 - HW 2}} 
+\textbf{REGALARIO, Jeremiah Daniel A. | 2022-20670}
+\begin{questions}
+    \question Let $f: G \to H$ be an isomorphism between geometry models $G$, $H$. Show that $f$ preserves the following concepts:
+    \begin{enumerate}
+      \item[(a)] There is a unique line on distinct points $A$, $B$.$^{1}$
+      \begin{proof}
+            $($WTS: $^1$If $A$, $B$ are distinct points in $G$ and there is a unique line in $G$ on $A$, $B$, then $f(A)$, $f(B)$ are distinct points in $H$ and there is a unique line in $H$ on $f(A)$, $f(B)$.$)$ \\
+           
+            Suppose $A, B \in \mathscr{P}(G)$ and $A \neq B$. Suppose further, that there is a unique line $\ell \in \mathscr{L}(G)$ such that $A, B \in \ell$. Then, $f(A) \neq f(B)$ since $f$ is one-to-one and $f(A), f(B) \in \mathscr{P}(H)$. Consider the line $f(\ell)  \in \mathscr{L}(H)$. Then, $f(A), f(B) \in f(\ell)$.\\
+
+            Suppose, on the contrary, that there is an another line $m \in\mathscr{L}(H), m \neq \ell$ such that $f(A), f(B) \in m$. Then, $m = f(\ell')$ for some $\ell' \in \mathscr{L}(G)$. It follows that $A, B \in \ell'$ but $\ell \neq \ell'$ (since $f$ is well-defined), a contradiction since $\ell$ is unique. Hence, $f(\ell)$ is unique. \\ 
+
+           Indeed, $f$ preserves the concept $(a)$. $\blacksquare$
+        \end{proof}
+      \item[(b)] Lines $\ell$, $m$ are parallel.$^{2}$
+      \begin{proof}
+            $($WTS: $^2$Show that if $\ell$, $m$ are parallel lines in $G$, then $f(l)$, $f(m)$ are parallel lines in $H$.$)$ \\
+           
+            Suppose $\ell, m \in \mathscr{L}(G)$ such that $\ell \cap m = \varnothing$. Then, $f(\ell), f(m) \in \mathscr{L}(H)$. Suppose, on the contrary, that $f(l)$ and $f(m)$ are not parallel. Then, there is a point $Q \in \mathscr{P}(H)$ such that $Q \in f(\ell) \cap f(m)$.  It follows that $Q \in f(\ell)$ and $Q \in f(m)$. Hence, there is a point $P \in \mathscr{P}(G)$ such that $Q = f(P)$. It follows that $P \in \ell$ and $P \in m$ (since $f$ is bijective, and is therefore, one-to-one, $f(P) \in f(\ell \cap m)$). This implies that $P \in \ell \cap m$, a contradiction.\\
+           
+           Indeed, $f$ preserves the concept $(b)$. $\blacksquare$
+        \end{proof}
+    \end{enumerate}
+
+    \question Let $G$, $H$ be isomorphic geometry models via the isomorphism $f: G \to H$. For each of the properties below, show that if $G$ satisfies the property, then so does $H$.
+    \begin{enumerate}
+        \item[(a)] FPG1: There are exactly four points.
+        \begin{proof}
+            Suppose $G$ has exactly four points, say $\mathscr{P}(G) = \{A, B, C, D\}$ (all are distinct). Using the fact that $f$ is a bijection, then, 
+            \begin{center}
+                $\mathscr{P}(H) = f(\mathscr{P}(G)) = f(\{A, B, C, D\}) = \{f(A), f(B), f(C), f(D)\} $, 
+            \end{center}
+            where $f(A)$, $f(B)$, $f(C)$, $f(D)$, are distinct ($f$ is bijective, and is therefore, one-to-one).\\
+    
+            Hence, $H$ has exactly four points. $\blacksquare$
+        \end{proof}
+        
+        \item[(b)] FPG2: Any two distinct points are on exactly one line.
+        \begin{proof}
+            Suppose any two distinct points in G are on exactly one line. 
+
+            Let  $P', Q' \in \mathscr{P}(H)$ where $P' \neq Q'$. Then $P' = f(P)$ and $Q' = f(Q)$ for some $P, Q \in \mathscr{P}(G)$. Note that $P \neq Q$ since $f$ is well-defined. It follows that $P, Q$ are in a unique line $m \in \mathscr{L}(G)$. Hence,  $P', Q' \in f(m) = m' \in \mathscr{L}(H)$. \\
+
+            Suppose, on the contrary, that there is another line $\ell \in \mathscr{L}(H)$, $\ell' \neq m'$ such that $P', Q' \in \ell'$. Then, $\ell' =f(\ell)$ for some $\ell \in \mathscr{L}(G)$. Since $f$ is well-defined, then $\ell \neq m$. From $P', Q' \in \ell'$, it follows that $f(P), f(Q) \in f(\ell)$ and therefore, $P, Q \in \ell$ ($f$ is one-to-one). But, $m$ is a unique line on $P, Q$, a contradiction.
+    
+            Hence, any two points in $H$ are on exactly one line. $\blacksquare$
+        \end{proof}
+        
+        \item[(c)] FPG3: Any line is on exactly two points.
+        \begin{proof}
+            Suppose that any line in $G$ is on exactly two points.
+
+            Let $\ell' \in \mathscr{L}(H)$. Then $\ell' = f(\ell)$ for some $\ell \in \mathscr{L}(G)$. It follows that $\ell$ is on exactly two points, say $\ell = \{P, Q\} \subseteq \mathscr{P}(G)$, where $P \neq Q$. Consequently, $\ell' = f(\ell) = f(\{P, Q\}) = \{f(P), f(Q)\}$, where $f(P) \neq f(Q)$ since $f$ is one-to-one. \\
+    
+            Hence, any line in $H$ is on exactly two points. $\blacksquare$
+        \end{proof}
+        
+        \item[(d)] FPG4: There are exactly six lines.
+        \begin{proof}
+            Suppose there are exactly six lines in $G$, say $\mathscr{L}(G) = \{\ell, m, n, o, p, q\}$ (all are distinct). It follows that:
+            \begin{center}
+                $\mathscr{L}(H) = f(\mathscr{L}(G)) = f(\{\ell, m, n, o, p, q\}) = \{f(\ell), f(m), f(n), f(o), f(p), f(q)\} $, 
+            \end{center}
+            where $f(\ell)$, $f(m)$, $f(n)$, $f(o)$, $f(p)$, $f(q)$ are distinct ($f$ is one-to-one).\\
+    
+            Hence, there are exactly six lines in $H$. $\blacksquare$
+        \end{proof}
+        \item[(e)] FPG5: Any point is on exactly three lines.
+        \begin{proof}
+            Suppose that any point in $G$ is on exactly three lines.
+
+            Let $P' \in \mathscr{P}(H)$. Then $P' = f(P)$ for some $P \in \mathscr{P}(G)$. It follows that $P$ is on exactly three lines, say $P \in \ell \cap m \cap n$ where $\ell, m, n \in \mathscr{L}(G)$ (all are distinct). Consequently, $P' = f(P) \in f(\ell \cap m \cap n) \subseteq f(\ell) \cap f(m) \cap f(n)$, where $f(\ell), f(m), f(n) \in \mathscr{L}(H)$ are distinct since $f$ is one-to-one. \\
+    
+            Hence, any point in $H$ is on exactly three lines. $\blacksquare$
+        \end{proof}
+        \item[(f)] EG5: Euclid’s fifth postulate$^3$
+        \begin{proof}
+        $(^3$Euclid’s fifth postulate: Given a line and a point not on the given line, there exists a unique line
+on the given point that is parallel to the given line.$)$ \\
+
+       Suppose $G$ satisfies $\text{EG5}$. Let $\ell' \in \mathscr{L}(H)$ and $P' \in \mathscr{P}(H)$ such that $P' \not\in \ell'$. Then, $\ell' = f(\ell)$ for some $\ell \in \mathscr{L}(G)$ and $P' = f(P)$ for some $P \in \mathscr{P}(G)$. This implies that $P \not\in \ell$. It follows that there exists a unique line, say $m \in \mathscr{L}(G)$ such that $P \in m$ and $m \cap \ell = \varnothing.$ Consider $m' = f(m) \in \mathscr{L}(H)$. Then, using the fact that f is bijective, $P' = f(P) \in f(m) = m'$ and $\ell' \cap m' = f(\ell) \cap f(m) = f(\ell \cap m) = f(\varnothing) = \varnothing$. \\
+
+       Suppose there exists another line $n' \in \mathscr{L}(H)$,  $n' \neq m'$ such that $P' \in n'$ and $\ell' \cap n' = \varnothing$. Then, $n' = f(n)$ for some line $n \in \mathscr{L}(G)$. It follows that $P \in n$ and $n \cap \ell = \varnothing$, which contradicts the uniqueness of m. Therefore, $m'$ is unique. \\
+
+       Hence, $H$ satisfies $\text{EG5}$. $\blacksquare$
+        \end{proof}
+    \end{enumerate}
+    
+    
+\end{questions}
+
+\end{document}

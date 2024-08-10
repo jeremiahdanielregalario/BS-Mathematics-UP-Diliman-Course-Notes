@@ -1,0 +1,56 @@
+\documentclass[a4paper, 10pt]{exam}
+\usepackage[margin=1in]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath, graphicx, multicol}
+\usepackage{pgf,tikz, graphicx}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+
+\everymath{\displaystyle}
+\printanswers
+\newmdtheoremenv{proof}{Proof}
+
+\begin{document}
+\fbox{\textbf{Math 140 - HW 1.1}} 
+\textbf{REGALARIO, Jeremiah Daniel A. | 2022-20670}
+\begin{questions}
+    \question For a geometry model $G$, consider these three statements:
+    \begin{enumerate}
+      \item[(i)] $\mathscr{P} (G)$ is finite.
+      \item[(ii)] $\mathscr{L} (G)$ is finite.
+      \item[(iii)] $\mathscr{P}(G) \cup \mathscr{L} (G)$ is finite.
+    \end{enumerate}
+    
+    \begin{enumerate}
+      \item[(a)] Show that (i) and (iii) are equivalent. As part of your proof for (i) $\Rightarrow$ (iii), calculate the maximum possible cardinality of $\mathscr{P}(G) \cup \mathscr{L}(G)$ given that the cardinality of $\mathscr{P}(G)$ is finite, say $k \in \mathbb{N} \cup \{0\}$.
+        \begin{proof}
+            WTS: $(i) \iff (iii)$\\
+           $ (\Rightarrow)$ Suppose $\mathscr{P} (G) $ is finite. Then, $|\mathscr{P}(G)| = k \in \mathbb{N}\cup \{0\}.$ 
+           It follows that $\mathscr{P}(G) \cup \mathscr{L} (G) \subseteq \mathscr{P}(G) \cup 2^{\mathscr{P} (G)} \setminus \{\varnothing\}.$ Furthermore,
+           \begin{align*}
+               |\mathscr{P}(G) \cup \mathscr{L} (G)| &\leq |\mathscr{P}(G) \cup 2^{\mathscr{P} (G)} \setminus \{\varnothing\}| \\
+               &= |2^{\mathscr{P} (G)} \setminus \{\varnothing\}| \\
+               &= 2^{|\mathscr{P} (G)|} - 1  \\
+               &= 2^k - 1
+           \end{align*}
+            Therefore, the maximum possible cardinality of $\mathscr{P}(G) \cup \mathscr{L} (G)$ is $\boxed{2^k - 1} \in \mathbb{N} \cup \{0\}. $\\
+            Hence, $\mathscr{P}(G) \cup \mathscr{L} (G)$ is finite. \\
+            
+           $ (\Leftarrow)$ Suppose $\mathscr{P}(G) \cup \mathscr{L} (G)$ is finite. Suppose further, on the contrary, that $\mathscr{P} (G)$ is infinite. Then, $\mathscr{P}(G) \cup \mathscr{L} (G) \supseteq \mathscr{P}(G)$ is also infinite, a contradiction. Hence, $\mathscr{P} (G)$ is finite. \\
+
+           Indeed, $\mathscr{P} (G)$ is finite is equivalent to $\mathscr{P}(G) \cup \mathscr{L} (G)$ is finite. $\blacksquare$
+        \end{proof}
+      \item[(b)] Demonstrate that (i) and (ii) are not equivalent, by giving an example of a geometry model $G$ with $\mathscr{L}(G) \neq \varnothing$ in which either (i) or (ii) holds but the other does not.
+        \begin{proof}
+            WTS: $(i) \not\equiv (ii)$ \\
+            Consider the geometry model $G$ with $\mathscr{P} (G) = \mathbb{R}^2$ and $\mathscr{L} (G) =\{\{(x,y) \in \mathbb{R}^2 \mid x + y = 0 \}\}$. Then, $\mathscr{L} (G)$ is finite with $|\mathscr{L} (G)| = 1 \in \mathbb{N} \cup \{0\}$ but $\mathscr{P} (G)$ is infinite. \\
+             
+            Hence, $\mathscr{P} (G)$ is finite is not equivalent to $\mathscr{L} (G)$ is finite. $\blacksquare$
+        \end{proof}
+
+    \end{enumerate}
+    
+\end{questions}
+
+\end{document}

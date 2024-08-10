@@ -1,0 +1,47 @@
+\documentclass[a4paper, 10pt]{exam}
+\usepackage[margin=1in]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath, graphicx, multicol}
+\usepackage{pgf,tikz, graphicx}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+
+\everymath{\displaystyle}
+\printanswers
+\newmdtheoremenv{proof}{Proof}
+
+\begin{document}
+\fbox{\textbf{Math 140 - HW 2 (Updated)}} 
+\textbf{REGALARIO, Jeremiah Daniel A. | 2022-20670}
+\begin{enumerate}
+    
+    \item[2.] Let $G$, $H$ be isomorphic geometry models via the isomorphism $f: G \to H$. For each of the properties below, show that if $G$ satisfies the property, then so does $H$.
+    \begin{enumerate}
+        
+        \item[(c)] FPG3: Any line is on exactly two points.
+        \begin{proof}
+            Suppose that any line in $G$ is on exactly two points.
+
+            Let $\ell' \in \mathscr{L}(H)$. Since $f$ is a bijection from $G$ to $H$ (and is therefore onto), then $\ell' = f(\ell)$ for some $\ell \in \mathscr{L}(G)$. It follows that $\ell$ is on exactly two points, say $\ell = \{P, Q\} \subseteq \mathscr{P}(G)$, where $P \neq Q$. Consequently, $\ell' = f(\ell) = f(\{P, Q\}) = \{f(P), f(Q)\}$, where $f(P) \neq f(Q)$ since $f$ is one-to-one. \\
+    
+            $\therefore$ Any line in $H$ is on exactly two points. $\blacksquare$
+        \end{proof}
+        
+        \item[(f)] EG5: Euclid’s fifth postulate$^3$
+        \begin{proof}
+        $(^3$Euclid’s fifth postulate: Given a line and a point not on the given line, there exists a unique line
+on the given point that is parallel to the given line.$)$ \\
+
+       Suppose $G$ satisfies $\text{EG5}$. Let $\ell' \in \mathscr{L}(H)$ and $P' \in \mathscr{P}(H)$ such that $P' \not\in \ell'$. Since $f$ is onto, then, $\ell' = f(\ell)$ for some $\ell \in \mathscr{L}(G)$ and $P' = f(P)$ for some $P \in \mathscr{P}(G)$. Since $f$ is one-to-one, $P' = f(P) \not\in f(\ell) = \ell'$ implies that $P \not\in \ell$. It follows that there exists a unique line, say $m \in \mathscr{L}(G)$ such that $P \in m$ and $m \cap \ell = \varnothing.$ Consider $m' = f(m) \in \mathscr{L}(H)$. Then, using the fact that f is bijective, $P' = f(P) \in f(m) = m'$ and $\ell' \cap m' = f(\ell) \cap f(m) = f(\ell \cap m) = f(\varnothing) = \varnothing$. \\
+
+       Suppose there exists another line $n' \in \mathscr{L}(H)$,  $n' \neq m'$ such that $P' \in n'$ and $\ell' \cap n' = \varnothing$. Then, $n' = f(n)$ for some line $n \in \mathscr{L}(G)$. It follows that $P \in n$ and $n \cap \ell = \varnothing$, which contradicts the uniqueness of m. Therefore, $m'$ is unique. \\
+
+       $\therefore$ $H$ satisfies $\text{EG5}$. $\blacksquare$
+        \end{proof}
+    \end{enumerate}
+    
+    
+\end{enumerate}
+
+\end{document}
