@@ -1,4 +1,4 @@
- #set text(font: "Fira Sans Math")
+#set text(font: "Fira Sans Math")
 #set page(paper: "a4")
 #set text(size: 30pt)
 #set align(horizon)
