@@ -8,7 +8,7 @@ ABSTRACT ALGEBRA I: Unit III
 #set text(size: 14pt, )
 #emph[Course Notes by: Jeremiah Daniel Regalario] \
 #emph[II-BS Mathematics] \
-#emph[University of the Philippines - Diliman] \
+#emph[University of the Philippines - Diliman]  \
 #emph[Dr. Lilibeth Valdez]
 
 
@@ -131,6 +131,8 @@ Let $R$ be a ring with additive identity $0$. Let $a, b, c ∈ R$.
   - e.g. in $ZZ_6$, $2 ·_6 3 = 0$
 
 \
+
+
 #underline[== Group of Units of _R_ (Theorem 2.14) ]
 
 #underline[=== Definition:]
@@ -163,6 +165,7 @@ The group of units of a ring with unity $R$ is denoted $U(R)$.
 + $U(QQ) = QQ^(∗)$, $U(RR) = RR^(∗)$, $U(CC) = CC^(∗)$
 + $U(ZZ_n) = U(n)$ = set of all elements of $ZZ_n$ that are relatively prime to $n$
 + $U(M_2(RR)) = op("GL")(2, RR)$
+
 
 
 #pagebreak()
@@ -201,9 +204,12 @@ In $ZZ_5$:
 
 
 #pagebreak()
+
+
+
 = Subrings and Subfields
 
-#line(length: 100% )
+#line(length: 100%)
 
 #underline[== Subring]
 
