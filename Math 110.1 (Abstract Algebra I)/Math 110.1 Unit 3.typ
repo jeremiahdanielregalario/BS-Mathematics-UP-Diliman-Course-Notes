@@ -13,12 +13,15 @@ ABSTRACT ALGEBRA I: Unit III
 
 
 #pagebreak()
+
+
 #set page(
   margin: (top: 60pt, bottom: 60pt),
   numbering: "1",
 )
 
 #set text(font: "Fira Sans Math", size: 12pt)
+
 #set align(top)
 
 = Rings
